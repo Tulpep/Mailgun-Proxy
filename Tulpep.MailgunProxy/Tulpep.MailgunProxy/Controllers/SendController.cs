@@ -7,10 +7,12 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using Tulpep.Signtul.Entities;
 
 namespace Tulpep.MailgunProxy.Controllers
 {
+    [EnableCors(origins: "https://tulpep.com", headers: "*", methods: "*")]
     public class SendController : ApiController
     {
         public async Task<HttpStatusCode> Post(EmailMessage message)
