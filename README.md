@@ -1,7 +1,7 @@
 # Mailgun-Proxy
 Simple .NET proxy to the Mailgun API
 
-Ready to use in Azure or on premise this .NET API take HTTP Posts requests and send them via email using Mailgun.
+Ready to use on Azure or on premise this .NET API take HTTP Posts requests and send them via email using Mailgun.
 It fully supports CORS. Using it you dont need to reveal your Mailgun API in your websites or javascript applications.
 
 This proxy is mantain for us because it is used in the contact forms of several of our websites.
