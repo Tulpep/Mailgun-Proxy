@@ -22,7 +22,7 @@ namespace Tulpep.MailgunProxy.Controllers
                     { "from", ConfigurationManager.AppSettings[Constants.From]},
                     { "to", ConfigurationManager.AppSettings[Constants.To] },
                     { "subject", message.Subject },
-                    { "html", String.Format("<h1>{0} {1} {2}</h1>{2}", message.FromName, message.FromEmailAddress, message.FromCompany, message.Message) }
+                    { "html", String.Format("<h1>{0} {1} {2}</h1>{3}", message.FromName, message.FromEmailAddress, message.FromCompany, message.Message) }
 
                 };
 
