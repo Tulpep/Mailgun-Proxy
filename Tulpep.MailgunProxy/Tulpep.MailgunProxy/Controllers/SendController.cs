@@ -7,12 +7,10 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
-using System.Web.Http.Cors;
 using Tulpep.Signtul.Entities;
 
 namespace Tulpep.MailgunProxy.Controllers
 {
-    [EnableCors(origins: "https://tulpep.com", headers: "*", methods: "*")]
     public class SendController : ApiController
     {
         public async Task<HttpStatusCode> Post(EmailMessage message)
@@ -21,10 +19,10 @@ namespace Tulpep.MailgunProxy.Controllers
             {
                 var values = new Dictionary<string, string>
                 {
-                    { "from", message.From },
-                    { "to", message.To },
+                    { "from", ConfigurationManager.AppSettings[Constants.From]},
+                    { "to", ConfigurationManager.AppSettings[Constants.To] },
                     { "subject", message.Subject },
-                    { "html", String.Format("<h1>{0} {1}</h1>{2}", message.FromName, message.FromEmailAddress, message.Message) }
+                    { "html", String.Format("<h1>{0} {1} {2}</h1>{2}", message.FromName, message.FromEmailAddress, message.FromCompany, message.Message) }
 
                 };
 
